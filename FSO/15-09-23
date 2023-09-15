@@ -1,0 +1,51 @@
+O sistema Operativo:
+
+- Gere recursos:
+	- Permite abstrair operações com periféricos
+	- Facilita comunicação entre periféricos.
+	- As operações são transmitidas a Impressoras através do SPOOL.
+	- Assegura a sincronização entre programas concorrentes que utilizam os mesmos recursos
+	- Gere permissões 
+
+Caracteristicas de um bom SO:
+
+	- Portável e fácil de usar;
+		- Acesso a funcionalidades atualizadas do SO;
+		- Adaptável a novo hardware;
+	
+	- Eficiência
+		- para o utilizador- tempo de resposta
+		- Sistema - taxa temporal de execução de tarefas
+		- Funcionalidades de monitorização e customização.
+	
+	- Fiabilidade (Reliability)(Good Ol reliable OS):
+	
+		- Recuperação de informação n shit
+
+O que caracteriza um processo?
+
+	- um ID.
+	- o ID do user que o criou
+	- Os dados do programa em memória (dados, código e pilha)
+	- Estado dos registos da CPU (quando falha)
+	- posição dos ficheiros lidos pelo programa
+
+	O sistema operativo faz comutação em sucessão rápida entre processos e gere a memória usada por cada um deles
+	
+
+A razão pela qual um disco rígido não tem 1TB de capacidade é o facto de armazenar metadados para os nomes das diretorias,
+ O boot sector e que diretorias/ficheiros tem cada dir. Quanto maior o disco, maior o volume de bytes que n pode ser usado
+
+
+Um ficheiro é uma sequencia lógicamente contigua (tem uma ordem. Mas n dá para saber ainda como o OS decide por que 
+setores o ficheiro é distribuido). Tem um nome unico que o identifica.
+
+	
+Um programa tem um perfil de execução:
+
+	pode ser:
+		CPU bound (utiliza muita CPU em relação a IO e periféricos)
+		IO bound (utiliza muita IO ......(o resto))
+		Bound por periféricos (....)	
+	
+	É daqui que vêem "bottlenecks"
