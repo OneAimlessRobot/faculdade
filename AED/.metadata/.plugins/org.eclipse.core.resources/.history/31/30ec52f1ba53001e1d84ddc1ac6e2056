@@ -1,0 +1,9 @@
+
+
+public interface LibrarianCopy{
+	
+	
+	void setSituation(boolean value);
+	
+	
+}

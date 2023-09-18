@@ -1,0 +1,7 @@
+
+
+public interface Copy extends Copy{
+	
+	
+	
+}

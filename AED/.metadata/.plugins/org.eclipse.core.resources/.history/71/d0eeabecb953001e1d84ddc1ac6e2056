@@ -1,0 +1,14 @@
+
+
+public abstract class Documento{
+	
+	protected String title;
+	protected String assunto;
+	protected String cota;
+	
+	
+	
+	
+	
+	
+}

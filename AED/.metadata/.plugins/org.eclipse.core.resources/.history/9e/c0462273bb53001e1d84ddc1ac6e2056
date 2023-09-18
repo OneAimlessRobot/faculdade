@@ -1,0 +1,8 @@
+
+
+public interface Copy{
+	
+	boolean getSituation();
+	
+	
+}
