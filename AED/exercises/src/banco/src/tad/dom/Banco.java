@@ -1,8 +1,8 @@
-package exercises.banco.src.tad.dom;
+package banco.src.tad.dom;
 
 import java.util.Date;
 
-import exercises.banco.src.tad.abstr.Iterator;
+import banco.src.tad.abstr.Iterator;
 
 public interface Banco {
 

@@ -1,4 +1,4 @@
-package exercises.banco.src;
+package banco.src;
 
 public class Main {
 
