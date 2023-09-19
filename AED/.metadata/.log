@@ -648,3 +648,17 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/exercises/src
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
 !SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2023-09-19 16:49:22.360
 !MESSAGE Cannot determine URI for '/exercises/src/fffff'.
+
+!ENTRY org.eclipse.core.jobs 4 2 2023-09-19 18:57:28.093
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.NumberFormatException: Cannot parse null string
+	at java.base/java.lang.Integer.parseInt(Integer.java:630)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1615)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1274)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1265)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1238)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1149)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
