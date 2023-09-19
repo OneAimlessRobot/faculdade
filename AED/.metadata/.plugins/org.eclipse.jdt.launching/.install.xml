@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
-    <entry loc="/usr" stamp="1612200331000"/>
     <entry loc="/usr/lib/jvm/java-17-openjdk-amd64" stamp="1684680366032"/>
-    <entry loc="/proc/self/root" stamp="1667403617997"/>
 </dirs>

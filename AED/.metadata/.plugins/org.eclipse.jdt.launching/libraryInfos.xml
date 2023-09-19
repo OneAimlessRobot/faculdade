@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <libraryInfos>
-    <libraryInfo home="/usr" version="17.0.7"/>
     <libraryInfo home="/usr/lib/jvm/java-17-openjdk-amd64" version="17.0.7"/>
-    <libraryInfo home="/proc/self/root" version="17.0.7"/>
 </libraryInfos>
