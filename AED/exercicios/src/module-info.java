@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author k
- *
- */
-module exercicios {
-}
