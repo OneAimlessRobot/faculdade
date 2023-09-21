@@ -1,0 +1,8 @@
+A conclusão de lab1 e que a stdlib usa sempre o mesmo comprimento de buffer em fcopia.
+E que a mv do java e tao rapida como o nosso programa em C!!!!!!
+
+O runtime de uma linguagem sao as bibliotecas em codigo maquina que se ligam ao meu programa quando o construo.
+
+A linguagem C tem um buffer que vem do runtime da linguagem (escopo superior ao meu) que usa em IO.
+
+A LINGUAGEM C USA FUCKING GLOBALS NA BIBLIOTECA! PQ E QUE EU N POSSO USAR???!!
