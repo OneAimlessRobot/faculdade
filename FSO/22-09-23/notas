@@ -1,0 +1,12 @@
+perror -> print para stderr;
+
+fork() retorna o pid do processo que criou e clona o processo pai                                                                                                      
+
+
+zombie existe para que o WAIT funcione e que seja possivel fazer com que um programa termine APENAS E SO quando todos os seus processos terminam
+
+Um processo para ser limpo tem de ter as suas streams fechadas, memoria "freeada" libertada, o estado dele é mudado (quando termina PONTO é
+
+
+Exec()-> cria um novo processo com codigo novo e nova memoria. Mas os canais IO, permissões, variaveis de ambiente e users são herdados. (No executavel do processo filho, temos de saber
+como aceder aos ficheiros criados (ou tambem usados) pelo pai.
