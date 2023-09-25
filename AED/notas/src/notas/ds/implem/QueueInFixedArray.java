@@ -57,13 +57,13 @@ public class QueueInFixedArray<T> implements Queue<T> {
 		@Override
 		public T front() throws EmptyQueueException {
 			
-			return container[curr]; 
+			return container[front]; 
 		}
 
 		@Override
 		public int size() {
 			
-			return curr+1;
+			return size;
 		}
 
 		@Override
