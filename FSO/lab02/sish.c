@@ -48,12 +48,10 @@ void prompt() {
 
 /******  MAIN  ******/
 int main() {
-    char* line=malloc(LINESIZE); //[LINESIZE];
+    char line[LINESIZE]; //[LINESIZE];
 	memset(line,0,LINESIZE);
-    char* cmd=malloc(LINESIZE);//[LINESIZE];
-	memset(cmd, 0, LINESIZE);
-   char**argv=malloc(ARGVMAX);
-	memset(argv,0,ARGVMAX);
+   char*argv[ARGVMAX];
+	memset(argv,0,ARGVMAX*sizeof(char*));
 	//[ARGVMAX];
 
     while (1) {
@@ -62,52 +60,29 @@ int main() {
 		line[strlen(line)-1]=0;
 	if(!strcmp(line,"exit")){ break;}
 		
-		for(int i=0;line[i];i++){
-
-			cmd[i]=line[i];
-		}
 	int bg=line[strlen(line)-1]=='&';
-	if(bg){line[strlen(line)-1]=0;}
-	char*args= line+strlen(cmd);
-	makeargv(args, argv);
+	if(bg){
+		line[strlen(line)-1]=0;
+		}
+	makeargv(line, argv);
 	int pid=fork();
 	switch(pid){
 
 		case 0:
 			printf("Sou o processo do comando\n Commando: %s\n",line);
-			execlp(line,line,NULL);
+			execvp(argv[0],argv);
 			perror("erro no exec. Processo nao mudou.");
-			
-			free(line);
-			free(cmd);
-			for(int i=0;argv[i];i++){
-
-
-				free(argv[i]);
-
-			}
-			free(argv);
-				exit(1);
-	
+			exit(1);
 		
 		default:
 			printf("n sei\n");
 			if(!bg){
 			while(wait(NULL)!=pid);
 			}
+
 			break;
 	} 
    }
-
-	free(line);
-	free(cmd);
-	for(int i=0;argv[i];i++){
-
-
-		free(argv[i]);
-
-	}
-	free(argv);
     return 0;
 }
 
