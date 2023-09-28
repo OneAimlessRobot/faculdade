@@ -47,7 +47,6 @@ public class StackInFixedArray<T> implements Stack<T> {
 
 	@Override
 	public int size() {
-		 21 1
 		return curr+1;
 	}
 
