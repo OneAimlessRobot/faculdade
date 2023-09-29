@@ -6,7 +6,7 @@ import notas.ds.interfaces.Queue;
 
 public class QueueInFixedArray<T> implements Queue<T> {
 		
-		private T[] container;
+		public T[] container;
 		private int size,front,back;
 		
 		public QueueInFixedArray(int size) {
@@ -14,7 +14,7 @@ public class QueueInFixedArray<T> implements Queue<T> {
 				this.container= (T[])new Object [size];
 				this.size=0;
 				this.front=0;
-				this.back=size-1;
+				this.back=0;
 			
 			
 		}
@@ -22,36 +22,53 @@ public class QueueInFixedArray<T> implements Queue<T> {
 		@Override
 		public void enqueue(T elem) {
 
-			back++;
+			if((size==container.length||back==front)&&!isEmpty()) {
+				
+				throw new FullQueueException();
+				
+			}
+			container[back++]=elem;
 			size++;
 			if(back==container.length) {
 				
 				back=0;
 			}
-			if(back==front) {
+			
+		}
+		
+		public String toString() {
+			String result="[";
+			for(int i=0;i<container.length;i++) {
 				
-				throw new FullQueueException();
-				
+				if(container[i]==null) {
+					
+					result+="null ";
+				}
+				else {
+				result=result+container[i]+" ";
+				}
 			}
-			container[back]=elem;
+			result+="]";
+			return result;
+			
+			
 			
 		}
 
 		@Override
 		public T dequeue() throws EmptyQueueException {
 
-			front++;
+			if(isEmpty()) {
+				
+				throw new EmptyQueueException();
+			}
+			T result= container[front];
+			container[front++]=null;
 			size--;
 			if(front==container.length) {
 				
 				front=0;
 			}
-			if(front==back) {
-				
-				throw new EmptyQueueException();
-			}
-			T result= container[front-1];
-			container[front-1]=null;
 			return result;
 		}
 
