@@ -4,13 +4,13 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>
-#include <sys/time.h>
 #include <fcntl.h>
 #include <time.h>
 
 #define ARGVMAX 100
 #define LINESIZE 1024
 
+#define BILLION  1000000000.0
 
 /* makeargv - build an argv vector from words in a string
  * in: s points a text string with words
@@ -40,19 +40,21 @@ int main(int argc, char**argv) {
 			
 		default:{
 
-		
-    struct timeval start, end;
+    struct timespec start, end;
  
-    gettimeofday(&start, NULL);
- 
-	while(wait(NULL)!=pid);
-    gettimeofday(&end, NULL);
+    clock_gettime(CLOCK_REALTIME, &start);
+	 
+ 		while(wait(NULL)!=pid);
 
-    long seconds = (end.tv_sec - start.tv_sec);
-    
-    long micros = ((seconds * 1000000) + end.tv_usec) - (start.tv_usec);
+    clock_gettime(CLOCK_REALTIME, &end);
  
-    printf("The elapsed time is %ld micros\n",  micros);
+    // time_spent = end - start
+    double time_spent = (end.tv_sec - start.tv_sec) +
+                        (end.tv_nsec - start.tv_nsec) / BILLION;
+ 
+    printf("The elapsed time is %f seconds\n", time_spent);
+
+		
 
 			break;
 		}	
