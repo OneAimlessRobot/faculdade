@@ -1,18 +1,15 @@
 import notas.ds.exceptions.*;
 import notas.ds.implem.*;
 import notas.ds.interfaces.*;
-import notas.ds.interfaces.Queue;
-import dataStructures.*;
-import dataStructures.EmptyQueueException;
 
 import java.io.IOException;
 
 import notas.auxiliar.*;
 public class dsRunner {
 
-	public static void main(String[] args) throws IOException, EmptyQueueException, notas.ds.exceptions.EmptyQueueException {
+	public static void main(String[] args) throws IOException, EmptyQueueException {
 
-		Queue<Integer> intQueue= new QueueInFixedArray<>(5);
+		QueueInFixedArray<Integer> intQueue= new QueueInFixedArray<>(5);
 		Integer[] nums= CollectionAlgorithms.randIntArrAux(0, 100, 3);
 		
 		for(int i=0;i<nums.length;i++) {

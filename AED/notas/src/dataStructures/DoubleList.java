@@ -294,26 +294,6 @@ public class DoubleList<E> implements List<E>
         currentSize++;
     }
 
-	public String toString() {
-		String result="[";
-		Iterator<E> it=new DoubleListIterator<>(head,tail);
-		while(it.hasNext()) {
-			E elem= it.next();
-			if(elem==null) {
-				
-				result+="null ";
-			}
-			else {
-			result=result+elem+" ";
-			}
-		}
-		result+="]";
-		return result;
-		
-		
-		
-	}
-
 
     /**
      * Inserts the specified element at the specified position in the list.
