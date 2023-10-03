@@ -7,9 +7,9 @@ import java.io.IOException;
 import notas.auxiliar.*;
 public class dsRunner {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, EmptyQueueException {
 
-		QueueInFixedArray<Integer> intQueue= new QueueInFixedArray<>(3);
+		QueueInFixedArray<Integer> intQueue= new QueueInFixedArray<>(5);
 		Integer[] nums= CollectionAlgorithms.randIntArrAux(0, 100, 3);
 		
 		for(int i=0;i<nums.length;i++) {
@@ -19,17 +19,47 @@ public class dsRunner {
 			
 		}
 		
+
 		System.in.read();
 			
 		System.out.println(intQueue);
-		while(!intQueue.isEmpty())
-			try {
-				System.out.printf("%d\n",intQueue.dequeue());
-			} catch (EmptyQueueException e) {
-				e.printStackTrace();
-			}
+
+		intQueue.enqueue(5);
+
+		System.in.read();
+			
+		System.out.println(intQueue);
+		
+
+		intQueue.dequeue();
+		intQueue.dequeue();
+		System.in.read();
 			
 		
+		System.out.println(intQueue);
+
+		intQueue.enqueue(5);
+
+		intQueue.enqueue(5);
+		System.in.read();
+			
+		
+		System.out.println(intQueue);
+
+		intQueue.enqueue(5);
+		System.in.read();
+			
+		
+		System.out.println(intQueue);
+
+		intQueue.dequeue();
+		System.in.read();
+			
+		
+		System.out.println(intQueue);
+
+
+
 	}
 
 }
