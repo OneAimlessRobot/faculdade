@@ -102,7 +102,15 @@ public class StackInArray<E> implements Stack<E>
         array[top] = element;
     }
 
+    public String toString() {
+    	
+    	
 
+        /**
+         * Memory of the queue: a list.
+         */
+        protected List<E> list;
+    }
     @Override
     public E pop( ) throws EmptyStackException
     {  
