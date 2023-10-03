@@ -7,7 +7,7 @@ package dataStructures;
  * @param <E> Generic Element
  * 
  */
-public class QueueInList<E> implements Queue<E>
+public class QueueInList<E>  implements Queue<E>
 { 
 
 	/**
@@ -19,7 +19,7 @@ public class QueueInList<E> implements Queue<E>
     /**
      * Memory of the queue: a list.
      */
-    protected List<E> list;                     
+    protected List<E> list; 
 
     /**
      * Constructor create an empty Doubly Linked List.
@@ -50,6 +50,25 @@ public class QueueInList<E> implements Queue<E>
         list.addLast(element);
     }
 
+	public String toString() {
+		String result="[";
+		Iterator<E> it=list.iterator();
+		while(it.hasNext()) {
+			E elem= it.next();
+			if(elem==null) {
+				
+				result+="null ";
+			}
+			else {
+			result=result+elem+" ";
+			}
+		}
+		result+="]";
+		return result;
+		
+		
+		
+	}
 
     @Override
     public E dequeue( ) throws EmptyQueueException   

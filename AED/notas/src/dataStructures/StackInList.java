@@ -15,6 +15,25 @@ public class StackInList<E> implements Stack<E>
         list = new DoubleList<E>();
     }
 
+	public String toString() {
+		String result="[";
+		Iterator<E> it=list.iterator();
+		while(it.hasNext()) {
+			E elem= it.next();
+			if(elem==null) {
+				
+				result+="null ";
+			}
+			else {
+			result=result+elem+" ";
+			}
+		}
+		result+="]";
+		return result;
+		
+		
+		
+	}
 
     // Returns true iff the stack contains no elements.
     public boolean isEmpty( )
