@@ -12,13 +12,6 @@
 
 #define BILLION  1000000000.0
 
-/* makeargv - build an argv vector from words in a string
- * in: s points a text string with words
- * out: argv[] will point to all words in the string s (*s is modified!)
- * pre: array provided by caller: argv should be declared as char *argv[ARGVMAX]
- * return: number of words pointed to by argv (or -1 in case of error)
- */
-
 
 int main(int argc, char**argv) {
 
@@ -28,11 +21,45 @@ int main(int argc, char**argv) {
 		exit(-1);
 
 	}
+	int fd,redirect=0;
+	char* filePath,*filename,buff[1024];
+
+	for(int i=0;i<argc;i++){
+
+		if(argv[i][0]=='='){
+			redirect=1;
+			filename= &argv[i][1];
+			filePath=strcat(strcat(getcwd(buff,1024),"/"),filename);
+			printf("%s\n",filePath);
+			int j=i;
+			for(;j<argc-1;j++){
+
+				argv[j]=argv[j+1];
+			}
+			argv[j]=0;
+			break;
+
+		}
+
+	}
+
+
+
 
 	int pid=fork();
 	switch(pid){
 
 		case 0:
+			if(redirect){
+			fd=creat(filePath,0666);
+			if(fd<0){
+
+				perror("erro ao abrir ficheiro\n");
+				exit(-1);
+			}
+			dup2(fd,1);
+			
+			}
 			execvp(argv[1],argv+1);
 			perror("erro no exec. Processo nao mudou.");
 			exit(1);
@@ -52,7 +79,7 @@ int main(int argc, char**argv) {
     double time_spent = (end.tv_sec - start.tv_sec) +
                         (end.tv_nsec - start.tv_nsec) / BILLION;
  
-    printf("The elapsed time is %f seconds\n", time_spent);
+    printf("\nThe elapsed time is %lf seconds\n", time_spent);
 
 		
 
