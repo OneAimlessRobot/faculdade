@@ -30,7 +30,6 @@ int main(int argc, char**argv) {
 			redirect=1;
 			filename= &argv[i][1];
 			filePath=strcat(strcat(getcwd(buff,1024),"/"),filename);
-			printf("%s\n",filePath);
 			int j=i;
 			for(;j<argc-1;j++){
 
