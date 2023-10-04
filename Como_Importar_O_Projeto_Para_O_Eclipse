@@ -1,0 +1,8 @@
+1- instalar git. (Descobrir como para o Sistema operativo que se tem)
+2- fazer "git clone git@github.com:OneAimlessRobot/faculdade.git" na diretoria em que se quer (CMD)
+3- ir para dentro de faculdade\AED
+4- apagar .metadata
+5- inicar eclipse
+6- iniciar novo workspace em: "no_sitio_onde_estamos_agora"
+7- Importar projetos existentes no workspace
+8- have fun
