@@ -78,7 +78,7 @@ int main(int argc, char**argv) {
     double time_spent = (end.tv_sec - start.tv_sec) +
                         (end.tv_nsec - start.tv_nsec) / BILLION;
  
-    printf("\nThe elapsed time is %lf seconds\n", time_spent);
+    printf("\nElapsed time: %6f seconds\n", (float)time_spent);
 
 		
 

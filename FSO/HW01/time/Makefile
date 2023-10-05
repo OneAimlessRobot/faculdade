@@ -1,5 +1,5 @@
 
-BINARY= mytime
+BINARY= time
 
 
 # compile options for debug mode
