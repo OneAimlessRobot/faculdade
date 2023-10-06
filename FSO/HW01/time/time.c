@@ -6,6 +6,7 @@
 #include <sys/wait.h>
 #include <fcntl.h>
 #include <time.h>
+#include <ctype.h>
 
 #define ARGVMAX 100
 #define LINESIZE 1024
@@ -49,7 +50,7 @@ int main(int argc, char**argv) {
 
 	if(argc<2){
 
-		perror("argv[1]");
+		perror(argv[1]);
 		exit(-1);
 
 	}
@@ -93,14 +94,14 @@ int main(int argc, char**argv) {
 			fd=creat(filePath,0666);
 			if(fd<0){
 
-				perror("creat");
+				perror(filePath);
 				exit(-1);
 			}
 			dup2(fd,1);
 			
 			}
 			execvp(argv[1],argv+1);
-			perror("exec");
+			perror(argv[1]);
 			exit(-1);
 
 			
